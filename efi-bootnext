@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+case "${1:-}" in
+    [0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]) ;;
+    *) echo "usage: efi-bootnext XXXX" >&2; exit 2 ;;
+esac
+efibootmgr | grep -qi "^Boot$1\*" || { echo "no active boot entry $1" >&2; exit 1; }
+exec efibootmgr --bootnext "$1"

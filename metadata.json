@@ -1,0 +1,7 @@
+{
+  "uuid": "efi-boot-switcher@mylesshannon.github.io",
+  "name": "EFI Boot Switcher",
+  "description": "A top-bar menu that lists the UEFI boot entries and reboots into the one you pick, once.",
+  "shell-version": ["46"],
+  "version": 1
+}
